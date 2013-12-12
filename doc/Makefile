@@ -1,4 +1,4 @@
-FILE = Proposta
+FILE =Final
 
 LATEX_EXECUTABLE=latex
 LATEX_VISUALIZATION=evince
