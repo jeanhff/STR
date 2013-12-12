@@ -1,0 +1,54 @@
+Initial
+
+Client: Pontos 
+Server: Qtd de pontos
+while( existir pontos)
+    Server: X,Y
+
+Periódico
+
+Client: Posição X,Y 
+Server: Qtd de carros.
+while( existir carros)
+    Server: X,Y
+
+
+Aperiódico:
+
+Client: Sucesso X,Y
+Server: OK
+
+for( i=1 até i=qtd de carros)
+    Server:Sucesso X,Y
+    Clienti: Ok 
+
+
+Server:
+Client: 
+Server:
+Client: 
+Server:
+Client: 
+Server:
+Client: 
+Server:
+Client: 
+Server:
+Client: 
+Server:
+Client: 
+Server:
+Client: 
+Server:
+Client: 
+Server:
+Client: 
+Server:
+Client: 
+Server:
+Client: 
+Server:
+Client: 
+Server:
+Client: 
+Server:

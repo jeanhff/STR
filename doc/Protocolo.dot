@@ -1,0 +1,52 @@
+digraph Protocol {
+
+
+  compound=true;
+
+  a[label="Pontos?"  shape="box"];
+  b[label="nº de Pontos"  shape="ellipse"];
+  c[label="X,Y"  shape="ellipse"];
+  e[label="X,Y"  shape="ellipse"];
+  f[label="Posição XY"  shape="box"];
+  g[label="nº de clientes"  shape="ellipse"];
+  //h[label="OK"  shape="box"];
+  i[label="OK"  shape="ellipse"];
+  j[label="Sucesso X,Y"  shape="box"];
+  k[label="Sucesso X,Y"  shape="ellipse"]; 
+  l[label="Inicio" shape=Mdiamond];
+  m[label="Fim" shape=Mdiamond];
+  n[label="Espera" shape=Mdiamond];
+  o[label="Outros Clientes" shape="box" style=dotted];
+   
+     subgraph cluster0 { 
+
+    label="Inicializar";                                  
+    a -> b;                                              
+    b -> c [label="Pontos > 0"];                                                                                             
+    c -> c [label="Pontos-- >= 0"];                                               
+  }                                                      
+  subgraph cluster1 {                                    
+    label="Informar Posição";                                  
+    f -> g;                                              
+    g -> e;
+    e -> e [label="Clientes-- >= 0"];                                               
+  }                                                      
+  
+ subgraph cluster2 {                                    
+    label="Informar Sucesso";                                  
+    j -> i;                                              
+    i -> k;                                              
+                                              
+  }                                                      
+  
+  c -> n [label="Pontos-- < 0"]; 
+  n -> f [label="Tempo%500==0"]; 
+  n -> j [label="Sucesso==1"];
+  n -> n [label="Sucesso!=1 && Tempo%500!=0"];
+  e -> n [label="Clientes-- < 0"]; 
+  k -> a [label="Pontos == 0"]; 
+  l -> a 
+  b -> m [label="Pontos == 0"]; 
+  k -> o [arrowhead="dot"];
+  k -> n [label="Pontos > 0"]; 
+}                                                        
